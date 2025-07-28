@@ -1,29 +1,18 @@
 group 'fr.g123k.flutterappbadge.flutterappbadger'
 version '1.0-SNAPSHOT'
 
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        // This is ONLY for the build system, not the plugin itself
-        classpath 'com.android.tools.build:gradle:7.4.2'
-    }
-}
-
 apply plugin: 'com.android.library'
 
 android {
     namespace 'fr.g123k.flutterappbadge.flutterappbadger'
 
-    compileSdkVersion 33
+    compileSdkVersion 34
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     compileOptions {
@@ -31,7 +20,9 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 
-    lintOptions {
+    buildToolsVersion = "34.0.0"
+
+    lint {
         disable 'InvalidPackage'
     }
 }
