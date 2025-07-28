@@ -6,6 +6,11 @@ buildscript {
         google()
         mavenCentral()
     }
+
+    dependencies {
+        // This is ONLY for the build system, not the plugin itself
+        classpath 'com.android.tools.build:gradle:7.4.2'
+    }
 }
 
 apply plugin: 'com.android.library'
@@ -32,6 +37,5 @@ android {
 }
 
 dependencies {
-    // ShortcutBadger is required
     implementation "me.leolin:ShortcutBadger:1.1.22@aar"
 }
